@@ -5,9 +5,11 @@ spring:
     devtools:
         restart:
             enabled: true
+        livereload:
+            enabled: false
     datasource:
         type: com.zaxxer.hikari.HikariDataSource
-        url: jdbc:h2:mem:votacao;DB_CLOSE_DELAY=-1
+        url: jdbc:h2:mem:riskassessment;DB_CLOSE_DELAY=-1
         username: risk
         password: risk
     h2:
