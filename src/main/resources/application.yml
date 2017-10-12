@@ -1,0 +1,7 @@
+
+spring:
+    application:
+        name: riskassessment
+    profiles:
+        default: dev
+        active: #spring.profiles.active#

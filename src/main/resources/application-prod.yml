@@ -1,0 +1,23 @@
+
+spring:
+    devtools:
+        restart:
+            enabled: false
+        livereload:
+            enabled: false
+    datasource:
+        type: com.zaxxer.hikari.HikariDataSource
+        url: jdbc:postgresql://postgres.ctapdjccebaf.sa-east-1.rds.amazonaws.com:5432/postgres
+        username: postgres
+        password: postgres
+    jpa:
+        database-platform: org.hibernate.dialect.PostgreSQLDialect
+        database: POSTGRESQL
+        show-sql: false
+        
+liquibase:
+    contexts: prod
+
+server:
+    port: 8080
+

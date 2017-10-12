@@ -1,0 +1,23 @@
+
+spring:
+    profiles:
+        active: test
+    application:
+        name: riskassessment
+    datasource:
+        type: com.zaxxer.hikari.HikariDataSource
+        url: jdbc:h2:mem:votacao;DB_CLOSE_DELAY=-1
+        username: risk
+        password: risk
+    jpa:
+        database-platform: org.hibernate.dialect.H2Dialect
+        database: H2
+        open-in-view: false
+        show-sql: false
+
+liquibase:
+    contexts: test
+
+server:
+    port: 10344
+    address: localhost
