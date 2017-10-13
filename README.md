@@ -6,7 +6,7 @@ Simple Demo of SpringBoot and AngularJS
 - url: jdbc:postgresql://localhost:5432/postgres 
 - user: postgres 
 - pass: postgres
--build: mvn clean install -Pprod
+- build: mvn clean install -Pprod
 
 ## Build Dev Profile with H2 Memory
 - build: mvn clean install -Pdev
