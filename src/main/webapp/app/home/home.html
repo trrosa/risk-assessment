@@ -1,0 +1,102 @@
+<div ng-cloak>
+
+    <form id="editForm" name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="form-group">
+                    <label class="control-label" data-translate="home.customerName" for="field_customerName">Nome Cliente</label>
+                    <input type="text" class="form-control" name="customerName" id="field_customerName"
+                           ng-model="vm.riskAssessment.customerName"
+                           required/>
+                    <div ng-show="editForm.customerName.$invalid">
+                        <p class="help-block"
+                           ng-show="editForm.customerName.$error.required" data-translate="entity.validation.required">
+                            This field is required.
+                        </p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label" data-translate="home.creditLimit" for="field_creditLimit">Limite Crédito</label>
+                    <input type="text"  class="form-control" name="creditLimit" id="field_creditLimit"
+                           ng-model="vm.riskAssessment.creditLimit" ui-money-mask
+                           required/>
+                    <div ng-show="editForm.creditLimit.$invalid">
+                        <p class="help-block"
+                           ng-show="editForm.creditLimit.$error.required" data-translate="entity.validation.required">
+                            This field is required.
+                        </p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label" data-translate="home.risk" for="field_risk">Risco</label>
+                    <select class="form-control" name="risk" ng-model="vm.riskAssessment.risk" id="field_risk" required>
+                        <option value="A" data-translate="riskApp.RISK_TYPE.A">A</option>
+                        <option value="B" data-translate="riskApp.RISK_TYPE.B">B</option>
+                        <option value="C" data-translate="riskApp.RISK_TYPE.C">C</option>
+                    </select>
+                    <div ng-show="editForm.risk.$invalid">
+                        <p class="help-block"
+                           ng-show="editForm.risk.$error.required" data-translate="entity.validation.required">
+                            This field is required.
+                        </p>
+                    </div>
+                </div>
+
+                <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-lg btn-success pull-right">
+                    <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+                </button>
+                <button type="button" ng-disabled="!vm.riskAssessment" ng-click="vm.cancel()" class="btn btn-lg btn-danger pull-right">
+                    <span class="glyphicon glyphicon glyphicon-remove-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancelar</span>
+                </button>
+            </div>
+        </div>
+        <br/>
+        <hr/>
+        <br/>
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="table-responsive">
+                    <table class="fix-table table table-striped">
+                        <thead>
+                            <tr sort="vm.predicate" ascending="vm.reverse" callback="vm.transition()">
+                                <th></th>
+                                <th sort-by="id"><span data-translate="home.id">Código</span> <span class="glyphicon glyphicon-sort"></span></th>
+                                <th sort-by="customerName"><span data-translate="home.customerName">Nome Cliente</span> <span class="glyphicon glyphicon-sort"></span></th>
+                                <th sort-by="risk"><span data-translate="home.creditLimit">Limite Crédito</span> <span class="glyphicon glyphicon-sort"></span></th>
+                                <th sort-by="rate"><span data-translate="home.rate">Taxa</span> <span class="glyphicon glyphicon-sort"></span></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="riskAssessment in vm.riskAssessments track by riskAssessment.id">
+                                <td class="text-left">
+                                    <div class="btn-group flex-btn-group-container pull-left">
+                                        <button type="button"
+                                                ng-click="vm.edit(riskAssessment)"
+                                                class="btn btn-primary btn-sm">
+                                            <span class="glyphicon glyphicon-pencil"></span>
+                                            <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
+                                        </button>
+                                        <button type="button"
+                                                ng-click="vm.delete(riskAssessment)"
+                                                class="btn btn-danger btn-sm">
+                                            <span class="glyphicon glyphicon-remove-circle"></span>
+                                            <span class="hidden-sm-down" data-translate="entity.action.delete"></span>
+                                        </button>
+                                    </div>
+                                </td>
+                                <td>{{riskAssessment.id}}</td>
+                                <td>{{riskAssessment.customerName | currency: 'R$ ' : 2}}</td>
+                                <td data-translate="{{'riskApp.RISK_TYPE.' + riskAssessment.risk}}">{{riskAssessment.risk}}</td>
+                                <td>{{riskAssessment.rate | number}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="text-center">
+                    <uib-pagination class="pagination-sm" total-items="vm.totalItems" items-per-page="vm.itemsPerPage" ng-model="vm.page" ng-change="vm.transition()"></uib-pagination>
+                </div>
+            </div>
+        </div>
+    </form>
+
+</div>

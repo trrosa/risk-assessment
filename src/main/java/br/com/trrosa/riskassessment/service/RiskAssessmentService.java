@@ -5,6 +5,8 @@ import br.com.trrosa.riskassessment.repository.RiskAssessmentRepository;
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -22,6 +24,15 @@ public class RiskAssessmentService {
     @Transactional(readOnly = false, rollbackFor = Exception.class)
     public RiskAssessment save(@NotNull @Valid RiskAssessment riskAssessment){
         return riskAssessmentRepository.save(riskAssessment);
+    }
+    
+    public Page<RiskAssessment> findAll(Pageable pageable){
+        return riskAssessmentRepository.findAll(pageable);
+    }
+
+    @Transactional(readOnly = false, rollbackFor = Exception.class)
+    public void delete(Long id) {
+        riskAssessmentRepository.delete(id);
     }
 
 }

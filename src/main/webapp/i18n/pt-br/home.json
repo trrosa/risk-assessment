@@ -1,0 +1,13 @@
+{
+    "home": {
+        "title": "Avaliação de Risco",
+        "subtitle": "Sistema de Avaliação de Risco",
+        "id": "Código",
+        "customerName": "Nome Cliente",
+        "creditLimit": "Limite de Crédito",
+        "risk": "Risco",
+        "rate": "Taxa %",
+        "excluir": "Deseja excluir o registro id {{id}}?",
+        "excluido": "Registro excluído com sucesso!"
+    }
+}

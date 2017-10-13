@@ -1,0 +1,29 @@
+{
+  "generator": {
+    "promptValues": {
+      "packageName": "br.com.trrosa.riskassessment",
+      "nativeLanguage": "pt-br"
+    },
+    "baseName": "votacao",
+    "packageName": "br.com.trrosa.riskassessment",
+    "packageFolder": "br/com/trrosa/riskassessment",
+    "serverPort": "8080",
+    "clusteredHttpSession": false,
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "h2Memory",
+    "prodDatabaseType": "postgresql",
+    "messageBroker": false,
+    "serviceDiscoveryType": false,
+    "buildTool": "maven",
+    "enableSocialSignIn": false,
+    "clientFramework": "angular1",
+    "useSass": false,
+    "applicationType": "monolith",
+    "enableTranslation": true,
+    "nativeLanguage": "pt-br",
+    "languages": [
+      "pt-br"
+    ]
+  }
+}

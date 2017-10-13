@@ -1,0 +1,44 @@
+{
+    "global": {
+        "title": "Avaliação de Risco",
+        "browsehappy": "Você está usando um navegador <strong>desatualizado</strong>. Favor <a href=\"http://browsehappy.com/?locale=pt_BR\">atualizar o seu navegador</a> para ter uma experiência melhor.",
+        "menu": {
+            "home": "Início"
+        }
+    },
+    "entity": {
+        "action": {
+            "back": "Voltar",
+            "cancel": "Cancelar",
+            "delete": "Excluir",
+            "edit": "Editar",
+            "save": "Salvar",
+            "view": "Visualizar"
+        },
+        "delete": {
+            "title": "Confirme a exclusão"
+        },
+        "validation": {
+            "required": "O campo é obrigatório.",
+            "minlength": "Este campo deve ter ao menos {{min}} caracteres.",
+            "maxlength": "Este campo não pode ter mais que {{max}} caracteres.",
+            "min": "Este campo deve ser maior que {{min}}.",
+            "max": "Este campo não pode ser maior que {{max}}.",
+            "minbytes": "Este campo deve ter ao menos {{min}} bytes.",
+            "maxbytes": "Este campo não pode ter mais que {{max}} bytes.",
+            "pattern": "Este campo deve estar dentro do seguinte padrão {{pattern}}.",
+            "number": "Este campo é do tipo número.",
+            "datetimelocal": "Este campo é do tipo data/hora."
+        }
+    },
+    "error": {
+        "title": "Erro",
+        "internalServerError": "Erro ao processar sua requisição",
+        "server.not.reachable": "Servidor indisponível",
+        "url.not.found": "Não encontrado",
+        "NotNull": "O Campo {{fieldName}} não pode ser vazio!",
+        "Size": "O campo {{fieldName}} não obedece os requisitos de tamanho mínimo ou máximo!",
+        "idexists": "Novo(a) {{entityName}} não pode ter uma ID"
+    },
+    "footer": "Avaliação de Risco"
+}
