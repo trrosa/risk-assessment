@@ -47,12 +47,12 @@ public class RiskAssessmentResource {
     }
     
     @GetMapping("/risk-assessment")
-    public ResponseEntity<Page<RiskAssessment>> getAllVotacaos(Pageable pageable) {
+    public ResponseEntity<Page<RiskAssessment>> getAllRiskAssessment(Pageable pageable) {
         return ResponseEntity.ok(riskAssessmentService.findAll(pageable));
     }
     
     @DeleteMapping("/risk-assessment/{id}")
-    public ResponseEntity<Void> deleteTransacao(@PathVariable Long id) {
+    public ResponseEntity<Void> deleteRiskAssessment(@PathVariable Long id) {
         riskAssessmentService.delete(id);
         return ResponseEntity.ok().build();
     }
